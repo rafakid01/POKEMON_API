@@ -1,0 +1,27 @@
+.btn-primary {
+    --bs-btn-color: #3c5aa6;
+    --bs-btn-bg: #ffcb05;
+    --bs-btn-border-color: #2a75bb;
+    --bs-btn-hover-color: #3c5aa6;
+    --bs-btn-hover-bg: #c7a008;
+    --bs-btn-hover-border-color: #2a75bb;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #3c5aa6;
+    --bs-btn-active-bg: #ffcb05;
+    --bs-btn-active-border-color: #2a75bb;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #3c5aa6;
+    --bs-btn-disabled-bg: #c7a008;
+    --bs-btn-disabled-border-color: #3c5aa6;
+}
+
+.pokemon-detail-btn {
+    border-width: 2px;
+    width: 100%;
+}
+
+.card-img-top{
+    width: 80%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+} 

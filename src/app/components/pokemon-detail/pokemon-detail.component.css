@@ -1,0 +1,29 @@
+.pokemon-container {
+    height: 100vh;
+}
+
+.pokemon-container row {
+    height: auto;
+}
+
+.btn-success {
+    --bs-btn-color: #3c5aa6;
+    --bs-btn-bg: #ffcb05;
+    --bs-btn-border-color: #2a75bb;
+    --bs-btn-hover-color: #3c5aa6;
+    --bs-btn-hover-bg: #c7a008;
+    --bs-btn-hover-border-color: #2a75bb;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #3c5aa6;
+    --bs-btn-active-bg: #ffcb05;
+    --bs-btn-active-border-color: #2a75bb;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #3c5aa6;
+    --bs-btn-disabled-bg: #c7a008;
+    --bs-btn-disabled-border-color: #3c5aa6;
+}
+
+.card-img-top {
+    background-image: url(https://i.pinimg.com/originals/2a/1d/d7/2a1dd7860f40ebd2c054644a4448b86e.jpg);
+    background-size: cover;
+}
