@@ -1,16 +1,28 @@
-<div class="container all-pokemon-container">
+<div class="container search-container">
+    <div class="row justify-content-end">
+        <div class="form-floating col-12 col-md-6">
+            <input type="text" id="searchPokemonInput" class="form-control form-control-sm"
+                [(ngModel)]="searchedPokemon" (keyup)="getPokemonSearched(searchedPokemon)" placeholder="Buscar Pókemon...">
+            <label for="searchPokemonInput">Buscar Pókemon...</label>
+        </div>
+    </div>
+</div>
+<div class="container all-pokemon-container" *ngIf="pokemonApiList.length > 0">
     <div class="row">
-        <div *ngFor="let pokemon of pokemonApiList?.results; index as i" class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+        <div *ngFor="let pokemon of pokemonApiList" class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
             <div class="card">
-                <div class="card-header">
-                    <p class="card-text fw-bold">ID: {{i+1}} </p>
+                <div class="card-header d-flex justify-content-end">
+                    <div class="col-4 alert alert-light p-1 d-flex justify-content-center">
+                        <small>
+                            ID: {{pokemon.id}}
+                        </small>
+                    </div>
                 </div>
-                <img src="{{pokemonSprites[i]}}" alt="" class="card-img-top">
+                <img src="{{pokemon.sprites}}" alt="" class="card-img-top">
                 <div class="card-body">
                     <h6 class="card-title"> {{pokemon.name | uppercase}} </h6>
-                    <a href="" routerLink="/pokemons/{{i}}" class="btn btn-primary btn-sm pokemon-detail-btn">Detalhes
-                        do pokémon</a>
                 </div>
+                <a class="btn btn-outline-dark" routerLink="/pokemons/{{pokemon.id}}">DETALHES</a>
             </div>
         </div>
     </div>

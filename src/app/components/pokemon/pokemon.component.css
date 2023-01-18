@@ -15,6 +15,21 @@
     --bs-btn-disabled-border-color: #3c5aa6;
 }
 
+.all-pokemon-container {
+    padding-top: 5em;
+}
+
+.search-container .form-floating {
+    z-index: 4000;
+    position: fixed;
+}
+
+.search-container input {
+    box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.75);
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+
 .pokemon-detail-btn {
     border-width: 2px;
     width: 100%;

@@ -8,13 +8,14 @@ export class ApiConnectionService {
 
   readonly pokemonApi: string;
   readonly singlePokemonUrl: string;
-
+  pokemonListApi: any;
+  
   constructor(
     private http: HttpClient
-  ) {
-    this.pokemonApi = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=905";
-    this.singlePokemonUrl = "https://pokeapi.co/api/v2/pokemon";
-    
+    ) {
+      this.pokemonApi = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=905";
+      this.singlePokemonUrl = "https://pokeapi.co/api/v2/pokemon";
+      
   }
 
   getAllPokemon() {

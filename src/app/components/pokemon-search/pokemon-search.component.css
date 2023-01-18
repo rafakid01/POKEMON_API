@@ -1,0 +1,10 @@
+.search-container .form-floating {
+    z-index: 4000;
+    position: fixed;
+}
+
+.search-container input {
+    box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.75);
+    border: none;
+    border-radius: 0 0 10px 10px;
+}

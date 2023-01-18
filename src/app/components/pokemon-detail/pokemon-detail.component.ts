@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiConnectionService } from 'src/app/services/api-connection.service';
-import { LoaderService } from 'src/app/services/loader.service';
-import { SinglePokemonService } from 'src/app/services/single-pokemon.service';
 
 @Component({
   selector: 'app-pokemon-detail',
