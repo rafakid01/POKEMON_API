@@ -2,49 +2,57 @@
     <a routerLink="/pokemons" class="btn btn-success m-2">
         Voltar
     </a>
-    <div class="container pokemon-container d-flex align-items-center justify-content-center" *ngIf="pokemon">
-        <div class="col-3 d-flex justify-content-end m-1">
-            <a class="btn btn-outline-dark btn-sm" href="/pokemons/{{pokemonUrlNumber-1}}" (click)="decreasePokemonUrlNumber()" *ngIf="pokemon.id > 1">ANTERIOR</a>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <img src="{{pokemon.sprites.front_default}}" alt="pokemon sprite" class="card-img-top">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-8">
-                            <h4 class="card-title">
-                                {{pokemon.name | uppercase}}
-                            </h4>
-                        </div>
-                        <div class="col-4 d-flex justify-content-end">
-                            <small>
-                                ID: {{pokemon.id}}
-                            </small>
+    <div class="container pokemon-container" *ngIf="pokemon">
+        <div class="row justify-content-center">
+            <div class="col-9 col-sm-7 col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-7 col-lg-8">
+                                <h4 class="card-title m-0">
+                                    {{pokemon.name | uppercase}}
+                                </h4>
+                            </div>
+                            <div class="col-5 col-lg-4">
+                                <small class="alert alert-light p-1 m-0 d-flex justify-content-center">
+                                    <span *ngFor="let type of pokemon.types">{{type.type.name | uppercase}}</span>
+                                </small>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-lg-6">
-                            <p class="card-text m-0">
-                                Tipo:
-                            </p>
-                            <p class="card-text fw-bold m-0" *ngFor="let type of pokemon.types">
-                                {{type.type.name | uppercase}}
-                            </p>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <p class="card-text m-0">
-                                Habilidades:
-                            </p>
-                            <p class="card-text fw-bold m-0" *ngFor="let ability of pokemon.abilities">
-                                {{ability.ability.name | uppercase}}
-                            </p>
+                    <img src="{{pokemon.sprites.front_default}}" alt="pokemon sprite" class="card-img-top">
+                    <div class="card-body">
+
+                        <div class="row justify-content-around">
+                            <div class="col-12 col-lg-6">
+                                <small class="alert alert-light p-1 m-0 d-flex justify-content-center">
+                                    ID: {{pokemon.id}}
+                                </small>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <p class="card-text m-0">
+                                    Habilidades:
+                                </p>
+                                <p class="card-text fw-bold m-0" *ngFor="let ability of pokemon.abilities">
+                                    {{ability.ability.name | uppercase}}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-3 m-1">
-            <a href="/pokemons/{{pokemonUrlNumber}}" *ngIf="pokemon.id < 905" class="btn btn-outline-dark btn-sm">PRÓXIMO</a>
+        <div class="row justify-content-center">
+            <div class="col-9 col-sm-7 col-md-4 d-flex justify-content-between">
+                <div class="col-5 col-sm-4 col-lg-5 d-flex justify-content-center m-1">
+                    <a class="btn btn-outline-dark btn-sm" href="/pokemons/{{pokemonUrlNumber-1}}"
+                        (click)="decreasePokemonUrlNumber()" *ngIf="pokemon.id > 1">ANTERIOR</a>
+                </div>
+                <div class="col-5 col-sm-4 col-lg-5 d-flex justify-content-center m-1">
+                    <a href="/pokemons/{{pokemonUrlNumber}}" *ngIf="pokemon.id < 905"
+                        class="btn btn-outline-dark btn-sm">PRÓXIMO</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

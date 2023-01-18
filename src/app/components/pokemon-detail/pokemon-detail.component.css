@@ -2,10 +2,6 @@
     height: 100vh;
 }
 
-.pokemon-container row {
-    height: auto;
-}
-
 .btn-success {
     --bs-btn-color: #3c5aa6;
     --bs-btn-bg: #ffcb05;
