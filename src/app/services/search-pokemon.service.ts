@@ -7,8 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchPokemonService {
   originalListPokemon: any[];
-  pokemonListComplete: any[];
-  // filteredList: any[];
+  pokemonListComplete: any;
   pokemonSearched: string;
 
   constructor(
@@ -18,8 +17,6 @@ export class SearchPokemonService {
     this.pokemonSearched = "";
     this.originalListPokemon = [];
     this.pokemonListComplete = [];
-
-    // this.filteredList = [];
 
     this.getAllPokemons();
   }
@@ -51,16 +48,15 @@ export class SearchPokemonService {
     this.pokemonSearched = pokemon;
   }
 
-  // filterPokemonArray(pokemonQuery: any) {
-  //   this.filteredList = [];
-  //   this.filteredList = this.originalListPokemon.results.filter((pokemon: any) => {
-  //     return pokemon?.name.toLowerCase().includes(pokemonQuery.toLowerCase())
-  //   })
-  //   return this.filteredList;
-  // }
+  generateListFiltered() {
+    this.filterPokemonArray(this.pokemonSearched);
+  }
 
-  // generateListFiltered() {
-  //   this.filteredList = this.filterPokemonArray(this.pokemonSearched);
-  //   return this.filteredList;
-  // }
+  filterPokemonArray(pokemonQuery: any) {
+    let filteredList = [];
+    filteredList = this.pokemonListComplete.results.filter((pokemon: any) => {
+      return pokemon.name.toLowerCase().includes(pokemonQuery.toLowerCase());
+    })
+    console.log(filteredList)
+  }
 }

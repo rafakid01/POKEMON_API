@@ -2,7 +2,7 @@
     <div class="row justify-content-end">
         <div class="form-floating col-12 col-md-6">
             <input type="text" id="searchPokemonInput" class="form-control form-control-sm"
-                [(ngModel)]="searchedPokemon" (keyup)="getPokemonSearched(searchedPokemon)" placeholder="Buscar Pókemon...">
+                [(ngModel)]="searchedPokemon" (keyup)="getPokemonSearched(searchedPokemon)" (keyup)="generateFilteredList()" placeholder="Buscar Pókemon...">
             <label for="searchPokemonInput">Buscar Pókemon...</label>
         </div>
     </div>

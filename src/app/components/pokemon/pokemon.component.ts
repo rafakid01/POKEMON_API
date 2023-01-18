@@ -39,5 +39,7 @@ export class PokemonComponent {
     this.filterService.getPokemon(pokemon);
   }
 
-  
+  generateFilteredList(){
+    this.filterService.generateListFiltered();
+  }
 }
