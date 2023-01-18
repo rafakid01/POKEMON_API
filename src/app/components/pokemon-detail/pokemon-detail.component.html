@@ -49,8 +49,8 @@
                         (click)="decreasePokemonUrlNumber()" *ngIf="pokemon.id > 1">ANTERIOR</a>
                 </div>
                 <div class="col-5 col-sm-4 col-lg-5 d-flex justify-content-center m-1">
-                    <a href="/pokemons/{{pokemonUrlNumber}}" *ngIf="pokemon.id < 905"
-                        class="btn btn-outline-dark btn-sm">PRÓXIMO</a>
+                    <a class="btn btn-outline-dark btn-sm" href="/pokemons/{{pokemonUrlNumber}}"
+                        *ngIf="pokemon.id < 905">PRÓXIMO</a>
                 </div>
             </div>
         </div>
