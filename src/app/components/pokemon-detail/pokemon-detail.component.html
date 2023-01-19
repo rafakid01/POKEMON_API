@@ -22,7 +22,6 @@
                     </div>
                     <img src="{{pokemon.sprites.front_default}}" alt="pokemon sprite" class="card-img-top">
                     <div class="card-body">
-
                         <div class="row justify-content-around">
                             <div class="col-12 col-lg-6">
                                 <small class="alert alert-light p-1 m-0 d-flex justify-content-center">
@@ -45,11 +44,11 @@
         <div class="row justify-content-center">
             <div class="col-9 col-sm-7 col-md-4 d-flex justify-content-between">
                 <div class="col-5 col-sm-4 col-lg-5 d-flex justify-content-center m-1">
-                    <a class="btn btn-outline-dark btn-sm" routerLink="/pokemons/{{pokemonUrlNumber}}"
+                    <a class="btn btn-outline-dark btn-sm" href="/pokemons/{{previousPokemonId}}"
                         *ngIf="pokemon.id > 1">ANTERIOR</a>
                 </div>
                 <div class="col-5 col-sm-4 col-lg-5 d-flex justify-content-center m-1">
-                    <a class="btn btn-outline-dark btn-sm" routerLink="/pokemons/{{pokemonUrlNumber}}"
+                    <a class="btn btn-outline-dark btn-sm" href="/pokemons/{{nextPokemonId}}"
                         *ngIf="pokemon.id < 905">PRÓXIMO</a>
                 </div>
             </div>

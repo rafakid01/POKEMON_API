@@ -1,28 +1,32 @@
-<div class="container search-container">
-    <div class="row justify-content-end">
-        <div class="form-floating col-12 col-md-6">
-            <input type="text" id="searchPokemonInput" class="form-control form-control-sm"
-                [(ngModel)]="searchedPokemon" (keyup)="getPokemonSearched(searchedPokemon)" (keyup)="generateFilteredList()" placeholder="Buscar Pókemon...">
-            <label for="searchPokemonInput">Buscar Pókemon...</label>
+<div class="container-flex">
+    <div class="container search-container">
+        <div class="row justify-content-end">
+            <div class="form-floating col-6 px-0 ">
+                <input type="text" id="searchPokemonInput" class="form-control form-control-sm"
+                    [(ngModel)]="searchedPokemon" (keyup)="getPokemonSearched(searchedPokemon)"
+                    (keyup)="generateFilteredList()" placeholder="Buscar Pókemon...">
+                <label for="searchPokemonInput">Buscar Pókemon...</label>
+            </div>
         </div>
     </div>
-</div>
-<div class="container all-pokemon-container">
-    <div class="row">
-        <div *ngFor="let pokemon of this.filterService.filterPokemonArray(searchedPokemon)" class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
-            <div class="card">
-                <div class="card-header d-flex justify-content-end">
-                    <div class="col-4 alert alert-light p-1 d-flex justify-content-center">
-                        <small>
-                            ID: {{pokemon.id}}
-                        </small>
+    <div class="container all-pokemon-container">
+        <div class="row">
+            <div *ngFor="let pokemon of this.filterService.filterPokemonArray(searchedPokemon)"
+                class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-end">
+                        <div class="col-4 alert alert-light p-1 d-flex justify-content-center">
+                            <small>
+                                ID: {{pokemon.id}}
+                            </small>
+                        </div>
                     </div>
+                    <img src="{{pokemon.sprites}}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h6 class="card-title"> {{pokemon.name | uppercase}} </h6>
+                    </div>
+                    <a class="btn btn-outline-dark" routerLink="/pokemons/{{pokemon.id}}">DETALHES</a>
                 </div>
-                <img src="{{pokemon.sprites}}" alt="" class="card-img-top">
-                <div class="card-body">
-                    <h6 class="card-title"> {{pokemon.name | uppercase}} </h6>
-                </div>
-                <a class="btn btn-outline-dark" routerLink="/pokemons/{{pokemon.id}}">DETALHES</a>
             </div>
         </div>
     </div>

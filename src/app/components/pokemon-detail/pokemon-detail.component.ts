@@ -10,12 +10,16 @@ import { ApiConnectionService } from 'src/app/services/api-connection.service';
 export class PokemonDetailComponent {
   pokemon?: any;
   pokemonUrlNumber: number;
+  previousPokemonId: number;
+  nextPokemonId: number;
 
   constructor(
     private route: ActivatedRoute,
     public connService: ApiConnectionService,
   ) {
     this.pokemonUrlNumber = 0;
+    this.previousPokemonId = 0;
+    this.nextPokemonId = 0;
 
     this.getPokemon();
   }
@@ -26,15 +30,21 @@ export class PokemonDetailComponent {
     this.connService.getSinglePokemon(id).subscribe((pokemon) => {
       this.pokemon = pokemon;
       console.log(pokemon)
-      this.getPokemonUrlId(this.pokemon.id);
+      this.getPokemonIdNumber(this.pokemon.id);
     })
   }
 
-  getPokemonUrlId(id:number) {
+  getPokemonIdNumber(id: number) {
     this.pokemonUrlNumber = id;
+    this.getPreviousId();
+    this.getNextId();
   }
 
-  decreasePokemonUrlNumber() {
-    this.pokemonUrlNumber -= 1;
+  getPreviousId() {
+    this.previousPokemonId = this.pokemonUrlNumber - 1;
+  }
+
+  getNextId() {
+    this.nextPokemonId = this.pokemonUrlNumber + 1;
   }
 }

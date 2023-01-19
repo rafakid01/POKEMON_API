@@ -10,7 +10,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent {
-  pokemonApiList: any[];
   searchedPokemon: string;
 
   constructor(
@@ -18,7 +17,6 @@ export class PokemonComponent {
     public filterService: SearchPokemonService,
     private http: HttpClient
   ) {
-    this.pokemonApiList = [];
     this.searchedPokemon = "";
   }
 

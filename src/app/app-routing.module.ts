@@ -6,10 +6,10 @@ import { HomeComponent } from './components/home/home.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
-  { path: "ability", component: AbilityComponent },
-  { path: "pokemons", component: PokemonComponent },
-  { path: "pokemons/:id", component: PokemonDetailComponent }
+  { path: "", component: HomeComponent, title: "Home" },
+  { path: "ability", component: AbilityComponent, title: "Habilidades" },
+  { path: "pokemons", component: PokemonComponent, title: "Pokemons" },
+  { path: "pokemons/:id", component: PokemonDetailComponent, title: "Pokemon" }
 ];
 
 @NgModule({
