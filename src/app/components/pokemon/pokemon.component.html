@@ -7,9 +7,9 @@
         </div>
     </div>
 </div>
-<div class="container all-pokemon-container" *ngIf="pokemonApiList.length > 0">
+<div class="container all-pokemon-container">
     <div class="row">
-        <div *ngFor="let pokemon of pokemonApiList" class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+        <div *ngFor="let pokemon of this.filterService.filterPokemonArray(searchedPokemon)" class="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
             <div class="card">
                 <div class="card-header d-flex justify-content-end">
                     <div class="col-4 alert alert-light p-1 d-flex justify-content-center">

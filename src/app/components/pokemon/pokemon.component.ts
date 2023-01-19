@@ -22,18 +22,7 @@ export class PokemonComponent {
     this.searchedPokemon = "";
   }
 
-  ngOnInit() {
-    this.getAllPokemon();
-  }
-
-  getAllPokemon() {
-    this.connService.getAllPokemon().subscribe((pokemonsApi) => {
-      // this.pokemonListArray = pokemonsApi;
-      // this.pokemonListArray = this.filterService.generateListFiltered();
-      // this.getAllPokemonComplete(this.pokemonListArray);
-      // console.log(this.pokemonListArray);
-    });
-  }
+  ngOnInit() {  }
 
   getPokemonSearched(pokemon: string) {
     this.filterService.getPokemon(pokemon);

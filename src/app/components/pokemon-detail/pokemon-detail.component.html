@@ -45,11 +45,11 @@
         <div class="row justify-content-center">
             <div class="col-9 col-sm-7 col-md-4 d-flex justify-content-between">
                 <div class="col-5 col-sm-4 col-lg-5 d-flex justify-content-center m-1">
-                    <a class="btn btn-outline-dark btn-sm" href="/pokemons/{{pokemonUrlNumber-1}}"
-                        (click)="decreasePokemonUrlNumber()" *ngIf="pokemon.id > 1">ANTERIOR</a>
+                    <a class="btn btn-outline-dark btn-sm" routerLink="/pokemons/{{pokemonUrlNumber}}"
+                        *ngIf="pokemon.id > 1">ANTERIOR</a>
                 </div>
                 <div class="col-5 col-sm-4 col-lg-5 d-flex justify-content-center m-1">
-                    <a class="btn btn-outline-dark btn-sm" href="/pokemons/{{pokemonUrlNumber}}"
+                    <a class="btn btn-outline-dark btn-sm" routerLink="/pokemons/{{pokemonUrlNumber}}"
                         *ngIf="pokemon.id < 905">PRÓXIMO</a>
                 </div>
             </div>

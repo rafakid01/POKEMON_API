@@ -13,7 +13,7 @@ export class PokemonDetailComponent {
 
   constructor(
     private route: ActivatedRoute,
-    public pokemonService: ApiConnectionService,
+    public connService: ApiConnectionService,
   ) {
     this.pokemonUrlNumber = 0;
 
@@ -23,7 +23,7 @@ export class PokemonDetailComponent {
   getPokemon() {
     const id = Number(this.route.snapshot.paramMap.get("id"));
 
-    this.pokemonService.getSinglePokemon(id + 1).subscribe((pokemon) => {
+    this.connService.getSinglePokemon(id).subscribe((pokemon) => {
       this.pokemon = pokemon;
       console.log(pokemon)
       this.getPokemonUrlId(this.pokemon.id);

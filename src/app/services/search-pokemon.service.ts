@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApiConnectionService } from './api-connection.service';
 import { HttpClient } from '@angular/common/http';
+import { iif } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -36,12 +37,14 @@ export class SearchPokemonService {
           {
             "id": singlePokemon.id,
             "name": singlePokemon.name,
-            "sprites": singlePokemon.sprites.front_default
+            "sprites": singlePokemon.sprites.front_default,
+            "types": singlePokemon.types,
+            "abilities": singlePokemon.abilities,
+            "weight": singlePokemon.weight
           }
         );
       })
     });
-    console.log(this.pokemonListComplete);
   }
 
   getPokemon(pokemon: string) {
@@ -54,9 +57,9 @@ export class SearchPokemonService {
 
   filterPokemonArray(pokemonQuery: any) {
     let filteredList = [];
-    filteredList = this.pokemonListComplete.results.filter((pokemon: any) => {
+    filteredList = this.pokemonListComplete.filter((pokemon: any) => {
       return pokemon.name.toLowerCase().includes(pokemonQuery.toLowerCase());
     })
-    console.log(filteredList)
+    return filteredList;
   }
 }
